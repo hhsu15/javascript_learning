@@ -43,7 +43,21 @@ const myContext = {
 		alert(introduction)	}
 }
 
+///////////////////
+// map, filter and reducen 
+let obj = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'raindeer'
+}
+// to this:
+'my name is Rudolf the raindeer'
 
+Object.entries(obj).map(value => value.join(" ")).join(' ')
+
+
+///////////////////////
+// class constructor
 class Student {
 	constructor (name, age, myclass) {
 		this.name = name;
@@ -51,7 +65,7 @@ class Student {
 		this.myclass = myclass;
 	}
 
-	introduction(greeting) {
+	introduction(greeting=null) {
 		let template = `${greeting}, my name is ${this.name} and I am ${this.age} years old. I am in ${this.myclass}`
 	    alert(template)
 	} 
@@ -64,7 +78,26 @@ class Classmate extends Student {
 	perform(role){
 		console.log(`horaaay! I am ${role}`)
 	}
-
-
-
 }
+
+//////////////////////
+// Javascript runtime environment 
+
+// call stack 
+// web api
+// callback queue 
+// event loop
+
+//eaxample
+
+
+console.log('first line');
+setTimeout(()=> {console.log('second line')},3000);
+console.log('third line');
+
+//--first, line 1 gets called -> call stack 1
+//--then, line 2 web api (setTimeout) is called -> call stack 1 is erased,
+//--then, line 3 is called -> call stack again
+//--then, result is in callback queue 
+//--event look checks if there is anythig in the callback queue
+//--if there is function is callback queue, it gets called and goes to call stack:x
