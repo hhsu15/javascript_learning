@@ -13,7 +13,8 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.urlencoded({extened: false}))
 app.use(bodyParser.json())
-
+//render html
+app.use(express.static(__dirname + '/public'))
 
 // this is for only GET request. 
 app.get('/profile', (req, res) => {
@@ -35,11 +36,11 @@ app.post('/post',(req, res) => {
 	res.send("Post request successful!")
 })
 
-app.get('/query', (req, res) => {
+app.get('/:id', (req, res) => {
 	//get the query e.g., 'localhost:3000/query?name=Hsin&age=50'
-	console.log(req.query)
-    console.log(req.body)
-    console.log(req.header)
+//	console.log(req.query)
+//  console.log(req.body)
+//  console.log(req.header)
     console.log(req.params)
 
 	res.send("sending query")

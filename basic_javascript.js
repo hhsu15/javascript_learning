@@ -99,5 +99,6 @@ console.log('third line');
 //--then, line 2 web api (setTimeout) is called -> call stack 1 is erased,
 //--then, line 3 is called -> call stack again
 //--then, result is in callback queue 
-//--event look checks if there is anythig in the callback queue
-//--if there is function is callback queue, it gets called and goes to call stack:x
+//--event loop checks if there is anythig in the callback queue
+//--if there is function is callback queue, it gets called and goes to call stack
+
